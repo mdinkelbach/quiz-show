@@ -31,11 +31,15 @@ body>header>a:link, body>header>a:visited, body>header>a:hover, body>header>a:ac
     padding: 20px;
 }
 
-button {
+#start-button, #button-1, #button-2, #button-3, #button-4{
     background-color: rgb(56, 56, 215);
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 37px;
     padding: 15px 32px;
+}
+
+#hidden-button {
+    display: none;
 }
