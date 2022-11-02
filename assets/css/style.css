@@ -1,6 +1,21 @@
+* {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
 body {
     background-color: #e1ebf0;
-  }
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+}
+
+body>header>a:link, body>header>a:visited, body>header>a:hover, body>header>a:active {
+    text-decoration: none;
+}
 
 .title {
     text-align: center;
@@ -14,4 +29,13 @@ body {
     line-height: 1;
     width: 60vw;
     padding: 20px;
-  }
+}
+
+button {
+    background-color: rgb(56, 56, 215);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 37px;
+    padding: 15px 32px;
+}
