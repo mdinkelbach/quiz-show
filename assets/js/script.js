@@ -2,6 +2,8 @@ let timer = document.getElementById('timer');
 //let quizBody = document.getElementById('section');
 let startButton = document.getElementById('start-button');
 let title = document.querySelector('.title');
+let correctAnswer = document.querySelector('.correct');
+let incorrectAnswer = document.querySelector('.incorrect');
 let section = document.querySelector('section');
 let newButton1 = document.createElement('button');
 let newButton2 = document.createElement('button');
@@ -24,37 +26,42 @@ function quiz() {
     let answer2 = '';
     let answer3 = '';
     let answer4 = '';
+    let answerSetter = '';
 
     function question1() {
         question = 'This is Question 1';
         answer1 = 'Q1A1';
         answer2 = 'Q1A2';
-        answer3 = 'Q1A3';
+        answer3 = 'Q1A3'; // Correct
         answer4 = 'Q1A4';
+        answerSetter = 1
     }
 
     function question2() {
         question = 'This is Question 2';
         answer1 = 'Q2A1';
-        answer2 = 'Q2A2';
+        answer2 = 'Q2A2'; // Correct
         answer3 = 'Q2A3';
         answer4 = 'Q2A4';
+        answerSetter = 2
     }
 
     function question3() {
         question = 'This is Question 3';
         answer1 = 'Q3A1';
-        answer2 = 'Q3A2';
+        answer2 = 'Q3A2'; // Correct
         answer3 = 'Q3A3';
         answer4 = 'Q3A4';
+        answerSetter = 3
     }
 
     function question4() {
         question = 'This is Question 4';
-        answer1 = 'Q4A1';
+        answer1 = 'Q4A1'; // Correct
         answer2 = 'Q4A2';
         answer3 = 'Q4A3';
         answer4 = 'Q4A4';
+        answerSetter = 4
     }
 
     function question5() {
@@ -62,7 +69,8 @@ function quiz() {
         answer1 = 'Q5A1';
         answer2 = 'Q5A2';
         answer3 = 'Q5A3';
-        answer4 = 'Q5A4';
+        answer4 = 'Q5A4'; // Correct
+        answerSetter = 5
     }
     
     function randomQuestion() {
@@ -104,6 +112,33 @@ function quiz() {
     section.children[6].setAttribute('id','button-4');
     section.children[6].textContent = answer4;
     section.children[6].setAttribute("style", "display: block; margin: 10px;");
+
+    if (answerSetter === 1) {
+        section.children[5].setAttribute('class','correct');
+        section.children[3].setAttribute('class','incorrect');
+        section.children[4].setAttribute('class','incorrect');
+        section.children[6].setAttribute('class','incorrect');
+    } else if (answerSetter === 2) {
+        section.children[4].setAttribute('class','correct');
+        section.children[3].setAttribute('class','incorrect');
+        section.children[5].setAttribute('class','incorrect');
+        section.children[6].setAttribute('class','incorrect');
+    } else if (answerSetter === 3) {
+        section.children[4].setAttribute('class','correct');
+        section.children[3].setAttribute('class','incorrect');
+        section.children[5].setAttribute('class','incorrect');
+        section.children[6].setAttribute('class','incorrect');
+    } else if (answerSetter === 4) {
+        section.children[3].setAttribute('class','correct');
+        section.children[4].setAttribute('class','incorrect');
+        section.children[5].setAttribute('class','incorrect');
+        section.children[6].setAttribute('class','incorrect');
+    } else {
+        section.children[6].setAttribute('class','correct');
+        section.children[3].setAttribute('class','incorrect');
+        section.children[4].setAttribute('class','incorrect');
+        section.children[5].setAttribute('class','incorrect');
+    }
 
 }
 
