@@ -17,6 +17,14 @@ body>header>a:link, body>header>a:visited, body>header>a:hover, body>header>a:ac
     text-decoration: none;
 }
 
+footer {
+    display: none;
+    justify-content: space-around;
+    color: rgb(161, 161, 161);
+    align-items: center;
+    font-size: 25px;
+}
+
 .title {
     text-align: center;
     font-size: 50px;

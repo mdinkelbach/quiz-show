@@ -2,6 +2,7 @@ let timer = document.getElementById('timer');
 let startButton = document.getElementById('start-button');
 let title = document.querySelector('.title');
 let section = document.querySelector('section');
+let footer = document.querySelector('footer');
 let newButton1 = document.createElement('button');
 let newButton2 = document.createElement('button');
 let newButton3 = document.createElement('button');
@@ -9,12 +10,24 @@ let newButton4 = document.createElement('button');
 
 let timeLeft = 0;
 
+function finishScreen() {
+    title.textContent = 'Done!';
+    section.children[1].textContent = '';
+    section.children[3].setAttribute("style", "display: none;");
+    section.children[4].setAttribute("style", "display: none;");
+    section.children[5].setAttribute("style", "display: none;");
+    section.children[6].setAttribute("style", "display: none;");
+}
+
 function countdown(){
     timeLeft--;
     timer.innerHTML = String(timeLeft);
     if (timeLeft > 0){
         setTimeout(countdown, 1000);
     }
+    if(timeLeft <= 0) {
+        finishScreen();
+      }
 };
 
 function quiz() {
@@ -45,6 +58,7 @@ function quiz() {
     section.children[6].setAttribute('id','button-4');
     section.children[6].textContent = answer4;
     section.children[6].setAttribute("style", "display: block; margin: 10px;");
+    footer.setAttribute("style", "display: flex;");
 
 
     function question2() {
@@ -121,26 +135,32 @@ function quiz() {
             question2();
             setAnswerText();
             answerSetter = 2;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 2) {
             console.log('incorrect');
             timeLeft-=15;
             question3();
             setAnswerText();
             answerSetter = 3;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 3) {
             console.log('incorrect');
             timeLeft-=15;
             question4();
             setAnswerText();
             answerSetter = 4;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 4) {
             console.log('correct');
             question5();
             setAnswerText();
             answerSetter = 5;
+            footer.textContent = ('Correct');
         } else {
             console.log('incorrect');
             timeLeft-=15;
+            footer.textContent = ('Incorrect');
+            finishScreen();
         }
     });
 
@@ -151,25 +171,31 @@ function quiz() {
             question2();
             setAnswerText();
             answerSetter = 2;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 2) {
             console.log('correct');
             question3();
             setAnswerText();
             answerSetter = 3;
+            footer.textContent = ('Correct');
         } else if (answerSetter === 3) {
             console.log('correct');
             question4();
             setAnswerText();
             answerSetter = 4;
+            footer.textContent = ('Correct');
         } else if (answerSetter === 4) {
             console.log('incorrect');
             timeLeft-=15;
             question5();
             setAnswerText();
             answerSetter = 5;
+            footer.textContent = ('Incorrect');
         } else {
             console.log('incorrect');
             timeLeft-=15;
+            footer.textContent = ('Incorrect');
+            finishScreen();
         }
     });
 
@@ -179,27 +205,33 @@ function quiz() {
             question2();
             setAnswerText();
             answerSetter = 2;
+            footer.textContent = ('Correct');
         } else if (answerSetter === 2) {
             console.log('incorrect');
             timeLeft-=15;
             question3();
             setAnswerText();
             answerSetter = 3;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 3) {
             console.log('incorrect');
             timeLeft-=15;
             question4();
             setAnswerText();
             answerSetter = 4;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 4) {
             console.log('incorrect');
             timeLeft-=15;
             question5();
             setAnswerText();
             answerSetter = 5;
+            footer.textContent = ('Incorrect');
         } else {
             console.log('incorrect');
             timeLeft-=15;
+            footer.textContent = ('Incorrect');
+            finishScreen();
         }
     });
 
@@ -210,28 +242,35 @@ function quiz() {
             question2();
             setAnswerText();
             answerSetter = 2;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 2) {
             console.log('incorrect');
             timeLeft-=15;
             question3();
             setAnswerText();
             answerSetter = 3;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 3) {
             console.log('incorrect');
             timeLeft-=15;
             question4();
             setAnswerText();
             answerSetter = 4;
+            footer.textContent = ('Incorrect');
         } else if (answerSetter === 4) {
             console.log('incorrect');
             timeLeft-=15;
             question5();
             setAnswerText();
             answerSetter = 5;
+            footer.textContent = ('Incorrect');
         } else {
             console.log('correct');
+            footer.textContent = ('Correct');
+            finishScreen();
         }
     });
+
 }
 
 startButton.addEventListener('click', function() {
