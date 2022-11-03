@@ -29,6 +29,17 @@ input {
     font-size: 25px;
 }
 
+li {
+    background-color: rgb(160, 160, 160);
+    width: 35vw;
+    text-align: left;
+}
+
+ol {
+    display: flex;
+    justify-content: center;
+}
+
 .title {
     text-align: center;
     font-size: 50px;
@@ -47,7 +58,7 @@ input {
     display: none;
 }
 
-#start-button, #button-1, #button-2, #button-3, #button-4, #button-5, #button-6, #button-7, #button-8 {
+#start-button, #button-1, #button-2, #button-3, #button-4, #button-5, #button-6, #button-7, #button-8, #back-score-button, #clear-score-button {
     background-color: rgb(56, 56, 215);
     color: white;
     border: none;

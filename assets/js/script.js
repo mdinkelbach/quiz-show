@@ -30,6 +30,15 @@ function finishScreen() {
     timer.setAttribute('style', 'display:none');
     frozenTimer.setAttribute('style', 'display:inline');
     timeLeft = null;
+    section.children[7].children[0].children[0].setAttribute('id','initials-input')
+    let submitButton = document.getElementById('submit-button');
+    
+    submitButton.addEventListener('click', function() {
+        console.log('submit')
+        let initialsInput = document.querySelector("#initials-input").value;
+        localStorage.setItem("initials", initialsInput);
+        localStorage.setItem("score", timeFreeze);
+    });
 }
 
 function countdown() {
@@ -283,6 +292,8 @@ function quiz() {
             finishScreen();
         }
     });
+
+    
 
 }
 
