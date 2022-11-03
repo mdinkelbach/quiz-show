@@ -1,31 +1,44 @@
 let timer = document.getElementById('timer');
+let frozenTimer = document.getElementById('frozen-timer');
 let startButton = document.getElementById('start-button');
 let title = document.querySelector('.title');
 let section = document.querySelector('section');
 let footer = document.querySelector('footer');
+let header = document.querySelector('header');
 let newButton1 = document.createElement('button');
 let newButton2 = document.createElement('button');
 let newButton3 = document.createElement('button');
 let newButton4 = document.createElement('button');
+let newP = document.createElement('p')
 
 let timeLeft = 0;
+let timeFreeze = '';
 
 function finishScreen() {
     title.textContent = 'Done!';
-    section.children[1].textContent = '';
+    section.children[1].textContent = `Your final score is ${timeLeft}.`;
     section.children[3].setAttribute("style", "display: none;");
     section.children[4].setAttribute("style", "display: none;");
     section.children[5].setAttribute("style", "display: none;");
     section.children[6].setAttribute("style", "display: none;");
+    section.appendChild(newP);
+    section.children[7].setAttribute('id', 'input');
+    document.querySelector("#input").innerHTML="<p>Enter Initals: <input></input><button>Submit</button></p>";
+    section.children[7].children[0].children[1].setAttribute('id', 'submit-button');
+    timeFreeze = timeLeft;
+    frozenTimer.innerHTML = String(timeFreeze);
+    timer.setAttribute('style', 'display:none');
+    frozenTimer.setAttribute('style', 'display:inline');
+    timeLeft = null;
 }
 
-function countdown(){
+function countdown() {
     timeLeft--;
     timer.innerHTML = String(timeLeft);
     if (timeLeft > 0){
         setTimeout(countdown, 1000);
     }
-    if(timeLeft <= 0) {
+    if(timeLeft <= 0 && title.textContent != 'Done!') {
         finishScreen();
       }
 };

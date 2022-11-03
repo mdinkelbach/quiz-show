@@ -25,6 +25,10 @@ footer {
     font-size: 25px;
 }
 
+input {
+    font-size: 25px;
+}
+
 .title {
     text-align: center;
     font-size: 50px;
@@ -39,6 +43,10 @@ footer {
     padding: 20px;
 }
 
+#frozen-timer {
+    display: none;
+}
+
 #start-button, #button-1, #button-2, #button-3, #button-4, #button-5, #button-6, #button-7, #button-8 {
     background-color: rgb(56, 56, 215);
     color: white;
@@ -46,6 +54,16 @@ footer {
     border-radius: 8px;
     font-size: 37px;
     padding: 15px 32px;
+}
+
+#submit-button {
+    background-color: rgb(56, 56, 215);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 27px;
+    padding: 6px 15px;
+    margin-left: 10px;
 }
 
 #hidden-button {
