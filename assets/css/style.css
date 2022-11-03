@@ -29,6 +29,10 @@ input {
     font-size: 25px;
 }
 
+form {
+    display: inline;
+}
+
 li {
     background-color: rgb(160, 160, 160);
     width: 35vw;
