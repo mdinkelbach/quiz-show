@@ -21,7 +21,7 @@ function quiz() {
     let question = 'This is Question 1';
     let answer1 = 'Q1A1';
     let answer2 = 'Q1A2';
-    let answer3 = 'Q1A3';
+    let answer3 = 'Q1A3'; // Correct
     let answer4 = 'Q1A4';
     let answerSetter = 1;
 
@@ -45,16 +45,7 @@ function quiz() {
     section.children[6].setAttribute('id','button-4');
     section.children[6].textContent = answer4;
     section.children[6].setAttribute("style", "display: block; margin: 10px;");
-    
 
-    /*function question1() {
-        question = 'This is Question 1';
-        answer1 = 'Q1A1';
-        answer2 = 'Q1A2';
-        answer3 = 'Q1A3'; // Correct
-        answer4 = 'Q1A4';
-        answerSetter = 1;
-    }*/
 
     function question2() {
         question = 'This is Question 2';
@@ -108,44 +99,12 @@ function quiz() {
             question5()
         }
 
-    }
-
-    function settingAnswers() {
-    if (answerSetter === 1) {
-        section.children[5].setAttribute('class','correct');
-        section.children[3].setAttribute('class','incorrect');
-        section.children[4].setAttribute('class','incorrect');
-        section.children[6].setAttribute('class','incorrect');
-    } else if (answerSetter === 2) {
-        section.children[4].setAttribute('class','correct');
-        section.children[3].setAttribute('class','incorrect');
-        section.children[5].setAttribute('class','incorrect');
-        section.children[6].setAttribute('class','incorrect');
-    } else if (answerSetter === 3) {
-        section.children[4].setAttribute('class','correct');
-        section.children[3].setAttribute('class','incorrect');
-        section.children[5].setAttribute('class','incorrect');
-        section.children[6].setAttribute('class','incorrect');
-    } else if (answerSetter === 4) {
-        section.children[3].setAttribute('class','correct');
-        section.children[4].setAttribute('class','incorrect');
-        section.children[5].setAttribute('class','incorrect');
-        section.children[6].setAttribute('class','incorrect');
-    } else {
-        section.children[6].setAttribute('class','correct');
-        section.children[3].setAttribute('class','incorrect');
-        section.children[4].setAttribute('class','incorrect');
-        section.children[5].setAttribute('class','incorrect');
-    }
     }*/
 
     let button1 = document.getElementById('button-1');
     let button2 = document.getElementById('button-2');
     let button3 = document.getElementById('button-3');
     let button4 = document.getElementById('button-4');
-    //let correctAnswer = document.querySelector('.correct');
-    //let incorrectAnswer = document.querySelector('.incorrect');
-    //let button = document.querySelector('button');
 
     function setAnswerText() {
         title.textContent = question;
@@ -155,130 +114,124 @@ function quiz() {
         section.children[6].textContent = answer4;
     }
 
-    
-    function setQuestionOne() {
-        button1.addEventListener('click', function() {
+    button1.addEventListener('click', function() {
+        if (answerSetter === 1) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question2();
+            setAnswerText();
+            answerSetter = 2;
+        } else if (answerSetter === 2) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question3();
+            setAnswerText();
+            answerSetter = 3;
+        } else if (answerSetter === 3) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question4();
+            setAnswerText();
+            answerSetter = 4;
+        } else if (answerSetter === 4) {
+            console.log('correct');
+            question5();
+            setAnswerText();
+            answerSetter = 5;
+        } else {
+            console.log('incorrect');
+            timeLeft-=15;
+        }
+    });
+
+    button2.addEventListener('click', function() {
+        if (answerSetter === 1) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question2();
+            setAnswerText();
+            answerSetter = 2;
+        } else if (answerSetter === 2) {
+            console.log('correct');
+            question3();
+            setAnswerText();
+            answerSetter = 3;
+        } else if (answerSetter === 3) {
+            console.log('correct');
+            question4();
+            setAnswerText();
+            answerSetter = 4;
+        } else if (answerSetter === 4) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question5();
+            setAnswerText();
+            answerSetter = 5;
+        } else {
+            console.log('incorrect');
+            timeLeft-=15;
+        }
+    });
+
+    button3.addEventListener('click', function() {
+        if (answerSetter === 1) {
             console.log('correct');
             question2();
             setAnswerText();
-            setQuestionTwo();
-        });
-        button2.addEventListener('click', function() {
+            answerSetter = 2;
+        } else if (answerSetter === 2) {
             console.log('incorrect');
+            timeLeft-=15;
+            question3();
+            setAnswerText();
+            answerSetter = 3;
+        } else if (answerSetter === 3) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question4();
+            setAnswerText();
+            answerSetter = 4;
+        } else if (answerSetter === 4) {
+            console.log('incorrect');
+            timeLeft-=15;
+            question5();
+            setAnswerText();
+            answerSetter = 5;
+        } else {
+            console.log('incorrect');
+            timeLeft-=15;
+        }
+    });
+
+    button4.addEventListener('click', function() {
+        if (answerSetter === 1) {
+            console.log('incorrect');
+            timeLeft-=15;
             question2();
             setAnswerText();
-            setQuestionTwo();
-        });
-        button3.addEventListener('click', function() {
+            answerSetter = 2;
+        } else if (answerSetter === 2) {
             console.log('incorrect');
-            question2();
+            timeLeft-=15;
+            question3();
             setAnswerText();
-            setQuestionTwo();
-        });
-        button4.addEventListener('click', function() {
+            answerSetter = 3;
+        } else if (answerSetter === 3) {
             console.log('incorrect');
-            question2();
-            setAnswerText();
-            setQuestionTwo();
-        });
-    }
-    setQuestionOne();
-
-    function setQuestionTwo() {
-        button1.addEventListener('click', function() {
-            console.log('incorrect')
-            question3();
-            setAnswerText();
-            setQuestionThree();
-        });
-        button2.addEventListener('click', function() {
-            console.log('correct')
-            question3();
-            setAnswerText();
-            setQuestionThree();
-        });
-        button3.addEventListener('click', function() {
-            console.log('incorrect')
-            question3();
-            setAnswerText();
-            setQuestionThree();
-        });
-        button4.addEventListener('click', function() {
-            console.log('incorrect')
-            question3();
-            setAnswerText();
-            setQuestionThree();
-        });
-    }
-
-    function setQuestionThree() {
-        button1.addEventListener('click', function() {
-            console.log('incorrect')
+            timeLeft-=15;
             question4();
             setAnswerText();
-            setQuestionFour();
-        });
-        button2.addEventListener('click', function() {
-            console.log('correct')
-            question4();
-            setAnswerText();
-            setQuestionFour();
-        });
-        button3.addEventListener('click', function() {
-            console.log('incorrect')
-            question4();
-            setAnswerText();
-            setQuestionFour();
-        });
-        button4.addEventListener('click', function() {
-            console.log('incorrect')
-            question4();
-            setAnswerText();
-            setQuestionFour();
-        });
-    }
-
-    function setQuestionFour() {
-        button1.addEventListener('click', function() {
-            console.log('correct')
+            answerSetter = 4;
+        } else if (answerSetter === 4) {
+            console.log('incorrect');
+            timeLeft-=15;
             question5();
             setAnswerText();
-            setQuestionFive();
-        });
-        button2.addEventListener('click', function() {
-            console.log('incorrect')
-            question5();
-            setAnswerText();
-            setQuestionFive();
-        });
-        button3.addEventListener('click', function() {
-            console.log('incorrect')
-            question5();
-            setAnswerText();
-            setQuestionFive();
-        });
-        button4.addEventListener('click', function() {
-            console.log('incorrect')
-            question5();
-            setAnswerText();
-            setQuestionFive();
-        });
-    }
-
-    function setQuestionFive() {
-        button1.addEventListener('click', function() {
-            console.log('incorrect')
-        });
-        button2.addEventListener('click', function() {
-            console.log('incorrect')
-        });
-        button3.addEventListener('click', function() {
-            console.log('incorrect')
-        });
-        button4.addEventListener('click', function() {
-            console.log('correct')
-        });
-    }
+            answerSetter = 5;
+        } else {
+            console.log('correct');
+        }
+    });
 }
 
 startButton.addEventListener('click', function() {
