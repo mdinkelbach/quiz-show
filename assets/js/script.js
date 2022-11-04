@@ -1,3 +1,6 @@
+function init() {
+
+// Variable definitions for HTML elements
 let timer = document.getElementById('timer');
 let frozenTimer = document.getElementById('frozen-timer');
 let startButton = document.getElementById('start-button');
@@ -14,6 +17,7 @@ let newP = document.createElement('p')
 let timeLeft = 0;
 let timeFreeze = '';
 
+// Finish Screen, where score is displayed and initials input accept for score keeping
 function finishScreen() {
     title.textContent = 'Done!';
     section.children[1].textContent = `Your final score is ${timeLeft}.`;
@@ -41,6 +45,7 @@ function finishScreen() {
     });
 }
 
+// Quiz timer, 90 seconds
 function countdown() {
     timeLeft--;
     timer.innerHTML = String(timeLeft);
@@ -53,6 +58,7 @@ function countdown() {
 };
 
 function quiz() {
+    // Question and answers for Question 1
     let question = `Which of the following HTML sections will NOT show it's content on the body of a web page?`;
     let answer1 = '<main>';
     let answer2 = '<header>';
@@ -60,7 +66,7 @@ function quiz() {
     let answer4 = '<li>';
     let answerSetter = 1;
 
-    
+    // Clearing of "Start Screen" elements, adding of "Quiz" elements
     title.textContent = question;
     section.children[1].textContent = '';
     section.children[2].setAttribute('id','hidden-button');
@@ -82,7 +88,7 @@ function quiz() {
     section.children[6].setAttribute("style", "display: block; margin: 10px;");
     footer.setAttribute("style", "display: flex;");
 
-
+    // Question and answers for Question 2
     function question2() {
         question = `Which direction will "justify-content:center" center it's content?`;
         answer1 = 'Vertical';
@@ -91,7 +97,7 @@ function quiz() {
         answer4 = 'Along the opposite axis as the flex-direction';
         answerSetter = 2
     }
-
+    // Question and answers for Question 3
     function question3() {
         question = `What will the following line of code print to the console? console.log(['apple', 'orange', 'pear', 'bananna'].slice(0,2));`;
         answer1 = `['pear', 'bananna']`;
@@ -100,7 +106,7 @@ function quiz() {
         answer4 = `['apple','pear','bananna']`;
         answerSetter = 3
     }
-
+    // Question and answers for Question 4
     function question4() {
         question = `Which method will cause it's attached funtion to trigger off of an event?`;
         answer1 = 'addEventListener'; // Correct
@@ -109,7 +115,7 @@ function quiz() {
         answer4 = 'unshift';
         answerSetter = 4
     }
-
+    // Question and answers for Question 5
     function question5() {
         question = `Bootstrap is a Third-Party API intened to make which type of code easier?`;
         answer1 = 'Javascript';
@@ -118,7 +124,8 @@ function quiz() {
         answer4 = 'CSS'; // Correct
         answerSetter = 5
     }
-    
+
+    // Unused function for question randomization, didn't end up needing
     /*function randomQuestion() {
         let questions = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5'];
         let questionSelection = questions[Math.floor(Math.random()*5)];
@@ -142,6 +149,7 @@ function quiz() {
     let button3 = document.getElementById('button-3');
     let button4 = document.getElementById('button-4');
 
+    // Function to set question and answer text based on question number
     function setAnswerText() {
         title.textContent = question;
         section.children[3].textContent = answer1;
@@ -150,6 +158,7 @@ function quiz() {
         section.children[6].textContent = answer4;
     }
 
+    // Functionality for the first button of all quiz answers, subtracting time on incorrect answers
     button1.addEventListener('click', function() {
         if (answerSetter === 1) {
             timeLeft-=15;
@@ -181,6 +190,7 @@ function quiz() {
         }
     });
 
+    // Functionality for the second button of all quiz answers, subtracting time on incorrect answers
     button2.addEventListener('click', function() {
         if (answerSetter === 1) {
             timeLeft-=15;
@@ -211,6 +221,7 @@ function quiz() {
         }
     });
 
+    // Functionality for the third button of all quiz answers, subtracting time on incorrect answers
     button3.addEventListener('click', function() {
         if (answerSetter === 1) {
             question2();
@@ -242,6 +253,7 @@ function quiz() {
         }
     });
 
+    // Functionality for the fourth button of all quiz answers, subtracting time on incorrect answers
     button4.addEventListener('click', function() {
         if (answerSetter === 1) {
             timeLeft-=15;
@@ -277,9 +289,14 @@ function quiz() {
 
 }
 
+// Function that begins the quiz once the start button is pressed
 startButton.addEventListener('click', function() {
     timeLeft = 90
     timer.innerHTML = String(timeLeft);
     setTimeout(countdown, 1000);
     quiz();
 });
+
+}
+// Initializes the page
+init();
