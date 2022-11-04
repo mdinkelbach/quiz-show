@@ -53,11 +53,11 @@ function countdown() {
 };
 
 function quiz() {
-    let question = 'This is Question 1';
-    let answer1 = 'Q1A1';
-    let answer2 = 'Q1A2';
-    let answer3 = 'Q1A3'; // Correct
-    let answer4 = 'Q1A4';
+    let question = `Which of the following HTML sections will NOT show it's content on the body of a web page?`;
+    let answer1 = '<main>';
+    let answer2 = '<header>';
+    let answer3 = '<head>'; // Correct
+    let answer4 = '<li>';
     let answerSetter = 1;
 
     
@@ -84,38 +84,38 @@ function quiz() {
 
 
     function question2() {
-        question = 'This is Question 2';
-        answer1 = 'Q2A1';
-        answer2 = 'Q2A2'; // Correct
-        answer3 = 'Q2A3';
-        answer4 = 'Q2A4';
+        question = `Which direction will "justify-content:center" center it's content?`;
+        answer1 = 'Vertical';
+        answer2 = 'Along the same axis as the flex-direction'; // Correct
+        answer3 = 'Horizontal';
+        answer4 = 'Along the opposite axis as the flex-direction';
         answerSetter = 2
     }
 
     function question3() {
-        question = 'This is Question 3';
-        answer1 = 'Q3A1';
-        answer2 = 'Q3A2'; // Correct
-        answer3 = 'Q3A3';
-        answer4 = 'Q3A4';
+        question = `What will the following line of code print to the console? console.log(['apple', 'orange', 'pear', 'bananna'].slice(0,2));`;
+        answer1 = `['pear', 'bananna']`;
+        answer2 = `['apple', 'orange']`; // Correct
+        answer3 = `['orange','pear']`;
+        answer4 = `['apple','pear','bananna']`;
         answerSetter = 3
     }
 
     function question4() {
-        question = 'This is Question 4';
-        answer1 = 'Q4A1'; // Correct
-        answer2 = 'Q4A2';
-        answer3 = 'Q4A3';
-        answer4 = 'Q4A4';
+        question = `Which method will cause it's attached funtion to trigger off of an event?`;
+        answer1 = 'addEventListener'; // Correct
+        answer2 = 'event';
+        answer3 = 'log';
+        answer4 = 'unshift';
         answerSetter = 4
     }
 
     function question5() {
-        question = 'This is Question 5';
-        answer1 = 'Q5A1';
-        answer2 = 'Q5A2';
-        answer3 = 'Q5A3';
-        answer4 = 'Q5A4'; // Correct
+        question = `Bootstrap is a Third-Party API intened to make which type of code easier?`;
+        answer1 = 'Javascript';
+        answer2 = 'Java';
+        answer3 = 'HTML';
+        answer4 = 'CSS'; // Correct
         answerSetter = 5
     }
     
@@ -152,34 +152,29 @@ function quiz() {
 
     button1.addEventListener('click', function() {
         if (answerSetter === 1) {
-            console.log('incorrect');
             timeLeft-=15;
             question2();
             setAnswerText();
             answerSetter = 2;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 2) {
-            console.log('incorrect');
             timeLeft-=15;
             question3();
             setAnswerText();
             answerSetter = 3;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 3) {
-            console.log('incorrect');
             timeLeft-=15;
             question4();
             setAnswerText();
             answerSetter = 4;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 4) {
-            console.log('correct');
             question5();
             setAnswerText();
             answerSetter = 5;
             footer.textContent = ('Correct');
         } else {
-            console.log('incorrect');
             timeLeft-=15;
             footer.textContent = ('Incorrect');
             finishScreen();
@@ -188,33 +183,28 @@ function quiz() {
 
     button2.addEventListener('click', function() {
         if (answerSetter === 1) {
-            console.log('incorrect');
             timeLeft-=15;
             question2();
             setAnswerText();
             answerSetter = 2;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 2) {
-            console.log('correct');
             question3();
             setAnswerText();
             answerSetter = 3;
             footer.textContent = ('Correct');
         } else if (answerSetter === 3) {
-            console.log('correct');
             question4();
             setAnswerText();
             answerSetter = 4;
             footer.textContent = ('Correct');
         } else if (answerSetter === 4) {
-            console.log('incorrect');
             timeLeft-=15;
             question5();
             setAnswerText();
             answerSetter = 5;
             footer.textContent = ('Incorrect');
         } else {
-            console.log('incorrect');
             timeLeft-=15;
             footer.textContent = ('Incorrect');
             finishScreen();
@@ -223,34 +213,29 @@ function quiz() {
 
     button3.addEventListener('click', function() {
         if (answerSetter === 1) {
-            console.log('correct');
             question2();
             setAnswerText();
             answerSetter = 2;
             footer.textContent = ('Correct');
         } else if (answerSetter === 2) {
-            console.log('incorrect');
             timeLeft-=15;
             question3();
             setAnswerText();
             answerSetter = 3;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 3) {
-            console.log('incorrect');
             timeLeft-=15;
             question4();
             setAnswerText();
             answerSetter = 4;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 4) {
-            console.log('incorrect');
             timeLeft-=15;
             question5();
             setAnswerText();
             answerSetter = 5;
             footer.textContent = ('Incorrect');
         } else {
-            console.log('incorrect');
             timeLeft-=15;
             footer.textContent = ('Incorrect');
             finishScreen();
@@ -259,35 +244,30 @@ function quiz() {
 
     button4.addEventListener('click', function() {
         if (answerSetter === 1) {
-            console.log('incorrect');
             timeLeft-=15;
             question2();
             setAnswerText();
             answerSetter = 2;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 2) {
-            console.log('incorrect');
             timeLeft-=15;
             question3();
             setAnswerText();
             answerSetter = 3;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 3) {
-            console.log('incorrect');
             timeLeft-=15;
             question4();
             setAnswerText();
             answerSetter = 4;
             footer.textContent = ('Incorrect');
         } else if (answerSetter === 4) {
-            console.log('incorrect');
             timeLeft-=15;
             question5();
             setAnswerText();
             answerSetter = 5;
             footer.textContent = ('Incorrect');
         } else {
-            console.log('correct');
             footer.textContent = ('Correct');
             finishScreen();
         }
