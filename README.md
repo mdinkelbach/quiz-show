@@ -5,4 +5,4 @@ This challenge was to create a quiz with multiple coding questions that could st
 
 ![Webpage Screenshot](./assets/images/main-page.png)
 
-Link: https://mdinkelbach.github.io/
+Link: https://mdinkelbach.github.io/quiz-show/
