@@ -108,7 +108,7 @@ function quiz() {
     }
     // Question and answers for Question 4
     function question4() {
-        question = `Which method will cause it's attached funtion to trigger off of an event?`;
+        question = `Which method will cause it's attached function to trigger off of an event?`;
         answer1 = 'addEventListener'; // Correct
         answer2 = 'event';
         answer3 = 'log';
