@@ -99,7 +99,7 @@ function quiz() {
     }
     // Question and answers for Question 3
     function question3() {
-        question = `What will the following line of code print to the console? console.log(['apple', 'orange', 'pear', 'bananna'].slice(0,2));`;
+        question = `What will the following line of code print to the console? console.log(['apple', 'orange', 'pear', 'banana'].slice(0,2));`;
         answer1 = `['pear', 'bananna']`;
         answer2 = `['apple', 'orange']`; // Correct
         answer3 = `['orange','pear']`;
