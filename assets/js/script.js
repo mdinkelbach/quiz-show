@@ -100,10 +100,10 @@ function quiz() {
     // Question and answers for Question 3
     function question3() {
         question = `What will the following line of code print to the console? console.log(['apple', 'orange', 'pear', 'banana'].slice(0,2));`;
-        answer1 = `['pear', 'bananna']`;
+        answer1 = `['pear', 'banana']`;
         answer2 = `['apple', 'orange']`; // Correct
         answer3 = `['orange','pear']`;
-        answer4 = `['apple','pear','bananna']`;
+        answer4 = `['apple','pear','banana']`;
         answerSetter = 3
     }
     // Question and answers for Question 4
